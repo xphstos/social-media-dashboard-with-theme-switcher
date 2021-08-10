@@ -1,0 +1,46 @@
+@use '../../scss/functions' as *;
+@use '../../scss/mixins' as *;
+
+.section {
+	padding: 3rem max(1.75rem, 50vw - 1110px / 2);
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-auto-rows: max-content;
+	gap: 4rem;
+
+	&.withBackground {
+		background: linear-gradient(
+				90deg,
+				var(--header-background),
+				var(--header-background)
+			)
+			no-repeat top / 100% 65%;
+	}
+
+	> header {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+
+		h1 {
+			order: -1;
+			font-size: 2.5rem;
+			line-height: 1.2;
+		}
+
+		h2 {
+			order: -1;
+			font-size: 2rem;
+		}
+
+		h4 {
+			order: 2;
+			font-size: 1rem;
+			color: v("color-muted");
+		}
+
+		button {
+			justify-self: end;
+			order: 1;
+		}
+	}
+}

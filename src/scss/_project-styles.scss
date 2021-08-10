@@ -1,0 +1,27 @@
+@use './functions' as *;
+@use './mixins' as *;
+@use "sass:color" as *;
+
+::selection {
+	background-color: v("color");
+}
+
+%container {
+	padding: 0 max(1.5rem, 50vw - 1110px / 2);
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	font: 400 1rem / 1.5 "Inter", sans-serif;
+	background-color: v("background");
+	color: v("color");
+}
+
+@for $i from 1 through 6 {
+	h#{$i} {
+		font-weight: 700;
+	}
+}
